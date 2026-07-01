@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Search Flights</title>
+
+    <link rel="stylesheet" href="/search.css">
+
+</head>
+
+<body>
+
+    <div class="search-page">
+
+        <div class="overlay">
+
+            <h1 class="title">
+                Find Your Flight ✈
+            </h1>
+
+            <!-- SEARCH BAR -->
+
+            <form class="search-box">
+
+                <!-- FROM -->
+
+                <select>
+
+                    <option>Delhi (DEL)</option>
+
+                    <option>Kolkata (CCU)</option>
+
+                    <option>Mumbai (BOM)</option>
+
+                </select>
+
+                <!-- TO -->
+
+                <select>
+
+                    <option>Dubai (DXB)</option>
+
+                    <option>Singapore (SIN)</option>
+
+                    <option>London (LHR)</option>
+
+                    <option>Doha (DOH)</option>
+
+                    <option>Bangkok (BKK)</option>
+
+                    <option>Istanbul (IST)</option>
+
+                    <option>Abu Dhabi (AUH)</option>
+
+                    <option>Seoul (ICN)</option>
+
+                    <option>Zurich (ZRH)</option>
+
+                </select>
+
+                <input type="date">
+
+                <button type="button" onclick="showFlights()">
+
+                    Search Flights
+
+                </button>
+
+            </form>
+
+            <!-- NO FLIGHT MESSAGE -->
+
+            <div class="no-flight" id="noFlight">
+
+                <h2>
+                    No Flights Available ✈
+                </h2>
+
+                <p>
+                    Sorry, no flights found for this route.
+                </p>
+
+            </div>
+
+            <!-- FLIGHT CARDS -->
+
+            <div class="flight-container">
+
+                <!-- CARD -->
+
+                <div class="flight-card">
+
+                    <h2>
+                        Emirates Airlines
+                    </h2>
+
+                    <div class="time">
+
+                        <div>
+                            <h3>09:30 AM</h3>
+                            <p>Delhi</p>
+                        </div>
+
+                        <div class="line">
+                            ✈━━━━━━✈
+                        </div>
+
+                        <div>
+                            <h3>01:45 PM</h3>
+                            <p>Dubai</p>
+                        </div>
+
+                    </div>
+
+                    <div class="bottom">
+
+                        <div class="price">
+                            ₹24,999
+                        </div>
+
+                        <a href="/booking?airline=Emirates&price=24999" class="btn">
+
+                            Select Flight
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <!-- CARD -->
+
+                <div class="flight-card">
+
+                    <h2>
+                        Singapore Airlines
+                    </h2>
+
+                    <div class="time">
+
+                        <div>
+                            <h3>01:15 PM</h3>
+                            <p>Kolkata</p>
+                        </div>
+
+                        <div class="line">
+                            ✈━━━━━━✈
+                        </div>
+
+                        <div>
+                            <h3>07:00 PM</h3>
+                            <p>Singapore</p>
+                        </div>
+
+                    </div>
+
+                    <div class="bottom">
+
+                        <div class="price">
+                            ₹27,500
+                        </div>
+
+                        <a href="/booking?airline=Singapore&price=27500" class="btn">
+
+                            Select Flight
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <!-- CARD -->
+
+                <div class="flight-card">
+
+                    <h2>
+                        Qatar Airways
+                    </h2>
+
+                    <div class="time">
+
+                        <div>
+                            <h3>11:00 AM</h3>
+                            <p>Mumbai</p>
+                        </div>
+
+                        <div class="line">
+                            ✈━━━━━━✈
+                        </div>
+
+                        <div>
+                            <h3>03:45 PM</h3>
+                            <p>Doha</p>
+                        </div>
+
+                    </div>
+
+                    <div class="bottom">
+
+                        <div class="price">
+                            ₹31,999
+                        </div>
+
+                        <a href="/booking?airline=Qatar&price=31999" class="btn">
+
+                            Select Flight
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <!-- CARD -->
+
+                <div class="flight-card">
+
+                    <h2>
+                        British Airways
+                    </h2>
+
+                    <div class="time">
+
+                        <div>
+                            <h3>08:00 AM</h3>
+                            <p>Delhi</p>
+                        </div>
+
+                        <div class="line">
+                            ✈━━━━━━✈
+                        </div>
+
+                        <div>
+                            <h3>06:30 PM</h3>
+                            <p>London</p>
+                        </div>
+
+                    </div>
+
+                    <div class="bottom">
+
+                        <div class="price">
+                            ₹55,000
+                        </div>
+
+                        <a href="/booking?airline=British&price=55000" class="btn">
+
+                            Select Flight
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <!-- CARD -->
+
+                <div class="flight-card">
+
+                    <h2>
+                        Turkish Airlines
+                    </h2>
+
+                    <div class="time">
+
+                        <div>
+                            <h3>10:10 PM</h3>
+                            <p>Kolkata</p>
+                        </div>
+
+                        <div class="line">
+                            ✈━━━━━━✈
+                        </div>
+
+                        <div>
+                            <h3>05:00 AM</h3>
+                            <p>Istanbul</p>
+                        </div>
+
+                    </div>
+
+                    <div class="bottom">
+
+                        <div class="price">
+                            ₹44,999
+                        </div>
+
+                        <a href="/booking?airline=Turkish&price=44999" class="btn">
+
+                            Select Flight
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <!-- CARD -->
+
+                <div class="flight-card">
+
+                    <h2>
+                        Etihad Airways
+                    </h2>
+
+                    <div class="time">
+
+                        <div>
+                            <h3>03:15 PM</h3>
+                            <p>Delhi</p>
+                        </div>
+
+                        <div class="line">
+                            ✈━━━━━━✈
+                        </div>
+
+                        <div>
+                            <h3>07:20 PM</h3>
+                            <p>Abu Dhabi</p>
+                        </div>
+
+                    </div>
+
+                    <div class="bottom">
+
+                        <div class="price">
+                            ₹29,999
+                        </div>
+
+                        <a href="/booking?airline=Etihad&price=29999" class="btn">
+
+                            Select Flight
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <!-- CARD -->
+
+                <div class="flight-card">
+
+                    <h2>
+                        Thai Airways
+                    </h2>
+
+                    <div class="time">
+
+                        <div>
+                            <h3>05:20 AM</h3>
+                            <p>Mumbai</p>
+                        </div>
+
+                        <div class="line">
+                            ✈━━━━━━✈
+                        </div>
+
+                        <div>
+                            <h3>11:00 AM</h3>
+                            <p>Bangkok</p>
+                        </div>
+
+                    </div>
+
+                    <div class="bottom">
+
+                        <div class="price">
+                            ₹18,700
+                        </div>
+
+                        <a href="/booking?airline=Thai&price=18700" class="btn">
+
+                            Select Flight
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <!-- CARD -->
+
+                <div class="flight-card">
+
+                    <h2>
+                        Korean Air
+                    </h2>
+
+                    <div class="time">
+
+                        <div>
+                            <h3>09:10 AM</h3>
+                            <p>Delhi</p>
+                        </div>
+
+                        <div class="line">
+                            ✈━━━━━━✈
+                        </div>
+
+                        <div>
+                            <h3>08:25 PM</h3>
+                            <p>Seoul</p>
+                        </div>
+
+                    </div>
+
+                    <div class="bottom">
+
+                        <div class="price">
+                            ₹52,000
+                        </div>
+
+                        <a href="/login?airline=KoreanAir&price=52000" class="btn">
+
+                            Select Flight
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <!-- CARD -->
+
+                <div class="flight-card">
+
+                    <h2>
+                        Swiss International Air Lines
+                    </h2>
+
+                    <div class="time">
+
+                        <div>
+                            <h3>11:30 PM</h3>
+                            <p>Mumbai</p>
+                        </div>
+
+                        <div class="line">
+                            ✈━━━━━━✈
+                        </div>
+
+                        <div>
+                            <h3>07:10 AM</h3>
+                            <p>Zurich</p>
+                        </div>
+
+                    </div>
+
+                    <div class="bottom">
+
+                        <div class="price">
+                            ₹68,500
+                        </div>
+
+                        <a href="/booking?airline=Swiss&price=68500" class="btn">
+
+                            Select Flight
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- SCRIPT -->
+
+    <script>
+
+        const flightContainer =
+            document.querySelector(
+                ".flight-container"
+            );
+
+        const noFlight =
+            document.getElementById(
+                "noFlight"
+            );
+
+        flightContainer.style.display =
+            "none";
+
+        noFlight.style.display =
+            "none";
+
+        function showFlights() {
+
+            const from =
+                document.querySelectorAll(
+                    "select"
+                )[0]
+                    .value
+                    .split(" ")[0]
+                    .toLowerCase();
+
+            const to =
+                document.querySelectorAll(
+                    "select"
+                )[1]
+                    .value
+                    .split(" ")[0]
+                    .toLowerCase();
+
+            const cards =
+                document.querySelectorAll(
+                    ".flight-card"
+                );
+
+            let found = false;
+
+            cards.forEach(card => {
+
+                card.style.display =
+                    "none";
+
+            });
+
+            noFlight.style.display =
+                "none";
+
+            cards.forEach(card => {
+
+                const text =
+                    card.innerText
+                        .toLowerCase();
+
+                if (
+                    text.includes(from)
+                    &&
+                    text.includes(to)
+                ) {
+
+                    card.style.display =
+                        "block";
+
+                    found = true;
+                }
+
+            });
+
+            if (found) {
+
+                flightContainer.style.display =
+                    "flex";
+
+                flightContainer
+                    .scrollIntoView({
+
+                        behavior:
+                            "smooth"
+                    });
+            }
+
+            else {
+
+                flightContainer.style.display =
+                    "none";
+
+                noFlight.style.display =
+                    "block";
+
+                noFlight
+                    .scrollIntoView({
+
+                        behavior:
+                            "smooth"
+                    });
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>

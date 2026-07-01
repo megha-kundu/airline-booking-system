@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ticket Confirmed</title>
+
+    <link rel="stylesheet" href="/success.css">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial;
+            background: radial-gradient(circle at top, #1e293b, #0f172a);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card {
+            width: 420px;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(18px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 25px;
+            border-radius: 25px;
+            color: white;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+            text-align: center;
+            position: relative;
+        }
+
+        .logo-box {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+
+        .logo {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            border: 2px solid #fbbf24;
+        }
+
+        .success-badge {
+            font-size: 18px;
+            background: #22c55e;
+            display: inline-block;
+            padding: 6px 15px;
+            border-radius: 20px;
+            margin: 10px 0;
+            font-weight: bold;
+        }
+
+        h1 {
+            margin: 10px 0;
+            font-size: 24px;
+        }
+
+        .sub {
+            font-size: 14px;
+            opacity: 0.8;
+            margin-bottom: 20px;
+        }
+
+        .ticket {
+            text-align: left;
+            margin-top: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 15px;
+            border-radius: 15px;
+            border: 1px dashed rgba(255, 255, 255, 0.3);
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+            margin: 8px 0;
+        }
+
+        .label {
+            opacity: 0.7;
+        }
+
+        .value {
+            font-weight: bold;
+            color: #fbbf24;
+        }
+
+        .qr {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .qr img {
+            border-radius: 10px;
+        }
+
+        .actions {
+            margin-top: 20px;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+            background: #3b82f6;
+            color: white;
+            cursor: pointer;
+            margin-bottom: 10px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+        }
+
+        .print {
+            background: #f59e0b;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card">
+
+        <!-- AIRLINE LOGO -->
+        <div class="logo-box">
+            <img src="/air.jpg" class="logo">
+        </div>
+
+        <!-- SUCCESS BADGE -->
+        <div class="success-badge">✔ Booking Confirmed</div>
+
+        <h1>Flight Ticket Ready</h1>
+
+        <p class="sub">Your journey has been successfully booked ✈️</p>
+
+
+
+        <!-- TICKET DETAILS -->
+        <div class="ticket">
+
+            <div class="row">
+                <span class="label">Passenger</span>
+                <span class="value">{{fullname}}</span>
+            </div>
+
+            <div class="row">
+                <span class="label">From</span>
+                <span class="value">{{from}}</span>
+            </div>
+
+            <div class="row">
+                <span class="label">To</span>
+                <span class="value">{{to}}</span>
+            </div>
+
+            <div class="row">
+                <span class="label">Departure</span>
+                <span class="value">{{depart}}</span>
+            </div>
+
+            <div class="row">
+                <span class="label">Class</span>
+                <span class="value">{{travelClass}}</span>
+            </div>
+
+            <div class="row">
+                <span class="label">Seat</span>
+                <span class="value">{{seatNumber}}</span>
+            </div>
+
+            <div class="row">
+                <span class="label">Boarding Time</span>
+                <span class="value">{{boardingTime}}</span>
+            </div>
+
+            <div class="row">
+
+                <span class="label">
+                    Ticket Price
+                </span>
+
+                <span class="value">
+                    ₹{{price}}
+                </span>
+
+            </div>
+        </div>
+
+        <!-- QR CODE -->
+        <div class="qr">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=SkylineTicket">
+        </div>
+
+        <!-- ACTION BUTTONS -->
+        <div class="actions">
+
+            <button class="btn" onclick="window.location.href='/dashboard'">
+                Book Another Flight
+            </button>
+
+            <button class="btn print" onclick="window.print()">
+                Print Ticket 🖨
+            </button>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

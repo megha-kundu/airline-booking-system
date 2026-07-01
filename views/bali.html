@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Bali</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #081018;
+            color: white;
+        }
+
+        .hero {
+
+            height: 70vh;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+
+            align-items: center;
+
+            text-align: center;
+
+            background:
+                linear-gradient(rgba(0, 0, 0, .45),
+                    rgba(0, 0, 0, .45)),
+                url("https://images.pexels.com/photos/2166553/pexels-photo-2166553.jpeg");
+
+            background-size: cover;
+
+            background-position: center;
+        }
+
+        .hero h1 {
+
+            font-size: 80px;
+
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+
+            font-size: 24px;
+
+            color: #fbbf24;
+        }
+
+        .cards {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(280px, 1fr));
+
+            gap: 30px;
+
+            padding: 80px;
+        }
+
+        .card {
+
+            background: #111827;
+
+            padding: 30px;
+
+            border-radius: 20px;
+
+            transition: .4s;
+        }
+
+        .card:hover {
+
+            transform: translateY(-10px);
+        }
+
+        .card h2 {
+
+            color: #fbbf24;
+
+            margin-bottom: 15px;
+        }
+
+        .card p {
+
+            line-height: 1.8;
+
+            color: #d1d5db;
+        }
+
+        .book-btn {
+
+            display: block;
+
+            width: 280px;
+
+            margin: 50px auto;
+
+            text-align: center;
+
+            padding: 18px;
+
+            background: #f59e0b;
+
+            color: white;
+
+            text-decoration: none;
+
+            border-radius: 12px;
+
+            font-weight: bold;
+        }
+
+        .book-btn:hover {
+
+            background: #ffb300;
+        }
+
+        .back-btn {
+
+            display: block;
+
+            width: 280px;
+
+            margin: 60px auto 20px;
+
+            text-align: center;
+
+            padding: 18px;
+
+            background: transparent;
+
+            border: 2px solid #f59e0b;
+
+            color: #f59e0b;
+
+            text-decoration: none;
+
+            border-radius: 12px;
+
+            font-weight: bold;
+
+            transition: .3s;
+        }
+
+        .back-btn:hover {
+
+            background: #f59e0b;
+
+            color: white;
+
+            transform: translateY(-3px);
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="hero">
+
+        <h1>Bali 🇮🇩</h1>
+
+        <p>
+            Tropical Paradise & Island Luxury
+        </p>
+
+    </div>
+
+    <div class="cards">
+
+        <div class="card">
+
+            <h2>🌾 Rice Terraces</h2>
+
+            <p>
+                Explore the world-famous green rice fields of Ubud.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h2>🌊 Waterfalls</h2>
+
+            <p>
+                Discover breathtaking waterfalls hidden within lush jungles.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h2>🏖 Tropical Beaches</h2>
+
+            <p>
+                Relax on pristine beaches with crystal-clear waters.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h2>🛕 Uluwatu Temple</h2>
+
+            <p>
+                Experience Bali's iconic cliffside temple and sunset views.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h2>🏨 Luxury Resorts</h2>
+
+            <p>
+                Stay in world-class villas surrounded by nature.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h2>🌴 Jungle Retreats</h2>
+
+            <p>
+                Escape into peaceful tropical forests and eco-luxury resorts.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h2>🍹 Beach Clubs</h2>
+
+            <p>
+                Enjoy Bali's famous luxury beach clubs and nightlife.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h2>📸 Instagram Spots</h2>
+
+            <p>
+                Capture stunning landscapes, temples and ocean views.
+            </p>
+
+        </div>
+
+    </div>
+    <a href="/premium" class="back-btn">
+
+        ← Back To Destinations
+
+    </a>
+    <a href="/booking?airline=GarudaIndonesia&price=45000" class="book-btn">
+        Book Flight • ₹45,000
+    </a>
+</body>
+
+</html>

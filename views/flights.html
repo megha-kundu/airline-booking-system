@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkyLine Airways Flights</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: url('/flight.jpg') center center/cover fixed;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+            font-size: 60px;
+            margin-bottom: 40px;
+        }
+
+        .grid {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .card {
+            background: rgba(20, 30, 48, 0.80);
+            backdrop-filter: blur(12px);
+            border-radius: 30px;
+            padding: 35px;
+            transition: 0.4s;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+        }
+
+        .card h2 {
+            color: #ffc107;
+            font-size: 42px;
+            margin-bottom: 30px;
+        }
+
+        .flight-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 35px;
+        }
+
+        .time {
+            font-size: 36px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .city {
+            color: #ddd;
+            font-size: 20px;
+        }
+
+        .airplane {
+            font-size: 38px;
+            color: #ffc107;
+        }
+
+        .bottom-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .price {
+            font-size: 55px;
+            font-weight: bold;
+            color: #00ff99;
+        }
+
+        .btn {
+            background: #f59e0b;
+            color: white;
+            text-decoration: none;
+            padding: 18px 40px;
+            border-radius: 18px;
+            font-size: 22px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #d97706;
+        }
+
+        @media(max-width:768px) {
+
+            h1 {
+                font-size: 40px;
+            }
+
+            .flight-row {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+
+            .bottom-row {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .price {
+                font-size: 40px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Find Your Flight ✈</h1>
+
+        <div class="grid">
+
+            <div class="card">
+                <h2>Emirates Airlines</h2>
+                <div class="flight-row">
+                    <div>
+                        <div class="time">09:30 AM</div>
+                        <div class="city">Delhi</div>
+                    </div>
+                    <div class="airplane">✈────────✈</div>
+                    <div>
+                        <div class="time">01:45 PM</div>
+                        <div class="city">Dubai</div>
+                    </div>
+                </div>
+                <div class="bottom-row">
+                    <div class="price">₹24,999</div>
+                    <a class="btn" href="/login?airline=Emirates&price=24999">Select Flight</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Qatar Airways</h2>
+                <div class="flight-row">
+                    <div>
+                        <div class="time">08:15 AM</div>
+                        <div class="city">Delhi</div>
+                    </div>
+                    <div class="airplane">✈────────✈</div>
+                    <div>
+                        <div class="time">11:20 AM</div>
+                        <div class="city">Doha</div>
+                    </div>
+                </div>
+                <div class="bottom-row">
+                    <div class="price">₹28,500</div>
+                    <a class="btn" href="/login?airline=Qatar&price=28500">Select Flight</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Singapore Airlines</h2>
+                <div class="flight-row">
+                    <div>
+                        <div class="time">07:30 AM</div>
+                        <div class="city">Delhi</div>
+                    </div>
+                    <div class="airplane">✈────────✈</div>
+                    <div>
+                        <div class="time">03:15 PM</div>
+                        <div class="city">Singapore</div>
+                    </div>
+                </div>
+                <div class="bottom-row">
+                    <div class="price">₹42,000</div>
+                    <a class="btn" href="/login?airline=Singapore&price=42000">Select Flight</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Korean Air</h2>
+                <div class="flight-row">
+                    <div>
+                        <div class="time">10:00 AM</div>
+                        <div class="city">Delhi</div>
+                    </div>
+                    <div class="airplane">✈────────✈</div>
+                    <div>
+                        <div class="time">08:30 PM</div>
+                        <div class="city">Seoul</div>
+                    </div>
+                </div>
+                <div class="bottom-row">
+                    <div class="price">₹52,000</div>
+                    <a class="btn" href="/login?airline=KoreanAir&price=52000">Select Flight</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Japan Airlines</h2>
+                <div class="flight-row">
+                    <div>
+                        <div class="time">06:45 AM</div>
+                        <div class="city">Delhi</div>
+                    </div>
+                    <div class="airplane">✈────────✈</div>
+                    <div>
+                        <div class="time">07:10 PM</div>
+                        <div class="city">Tokyo</div>
+                    </div>
+                </div>
+                <div class="bottom-row">
+                    <div class="price">₹58,000</div>
+                    <a class="btn" href="/login?airline=JapanAirlines&price=58000">Select Flight</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>British Airways</h2>
+                <div class="flight-row">
+                    <div>
+                        <div class="time">11:00 AM</div>
+                        <div class="city">Delhi</div>
+                    </div>
+                    <div class="airplane">✈────────✈</div>
+                    <div>
+                        <div class="time">06:20 PM</div>
+                        <div class="city">London</div>
+                    </div>
+                </div>
+                <div class="bottom-row">
+                    <div class="price">₹65,000</div>
+                    <a class="btn" href="/login?airline=BritishAirways&price=65000">Select Flight</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Lufthansa</h2>
+                <div class="flight-row">
+                    <div>
+                        <div class="time">09:00 AM</div>
+                        <div class="city">Delhi</div>
+                    </div>
+                    <div class="airplane">✈────────✈</div>
+                    <div>
+                        <div class="time">05:00 PM</div>
+                        <div class="city">Frankfurt</div>
+                    </div>
+                </div>
+                <div class="bottom-row">
+                    <div class="price">₹70,000</div>
+                    <a class="btn" href="/login?airline=Lufthansa&price=70000">Select Flight</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Air India</h2>
+                <div class="flight-row">
+                    <div>
+                        <div class="time">08:30 AM</div>
+                        <div class="city">Delhi</div>
+                    </div>
+                    <div class="airplane">✈────────✈</div>
+                    <div>
+                        <div class="time">05:15 PM</div>
+                        <div class="city">New York</div>
+                    </div>
+                </div>
+                <div class="bottom-row">
+                    <div class="price">₹78,000</div>
+                    <a class="btn" href="/login?airline=AirIndia&price=78000">Select Flight</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Swiss Air</h2>
+                <div class="flight-row">
+                    <div>
+                        <div class="time">10:20 AM</div>
+                        <div class="city">Delhi</div>
+                    </div>
+                    <div class="airplane">✈────────✈</div>
+                    <div>
+                        <div class="time">05:50 PM</div>
+                        <div class="city">Zurich</div>
+                    </div>
+                </div>
+                <div class="bottom-row">
+                    <div class="price">₹49,000</div>
+                    <a class="btn" href="/login?airline=SwissAir&price=49000">Select Flight</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Air France</h2>
+                <div class="flight-row">
+                    <div>
+                        <div class="time">07:10 AM</div>
+                        <div class="city">Delhi</div>
+                    </div>
+                    <div class="airplane">✈────────✈</div>
+                    <div>
+                        <div class="time">03:40 PM</div>
+                        <div class="city">Paris</div>
+                    </div>
+                </div>
+                <div class="bottom-row">
+                    <div class="price">₹43,000</div>
+                    <a class="btn" href="/login?airline=AirFrance&price=43000">Select Flight</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Maldivian Air</h2>
+                <div class="flight-row">
+                    <div>
+                        <div class="time">08:00 AM</div>
+                        <div class="city">Delhi</div>
+                    </div>
+                    <div class="airplane">✈────────✈</div>
+                    <div>
+                        <div class="time">12:15 PM</div>
+                        <div class="city">Maldives</div>
+                    </div>
+                </div>
+                <div class="bottom-row">
+                    <div class="price">₹35,000</div>
+                    <a class="btn" href="/login?airline=MaldivianAir&price=35000">Select Flight</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Bali Air</h2>
+                <div class="flight-row">
+                    <div>
+                        <div class="time">06:20 AM</div>
+                        <div class="city">Delhi</div>
+                    </div>
+                    <div class="airplane">✈────────✈</div>
+                    <div>
+                        <div class="time">02:30 PM</div>
+                        <div class="city">Bali</div>
+                    </div>
+                </div>
+                <div class="bottom-row">
+                    <div class="price">₹39,000</div>
+                    <a class="btn" href="/login?airline=BaliAir&price=39000">Select Flight</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Turkish Airlines</h2>
+                <div class="flight-row">
+                    <div>
+                        <div class="time">09:50 AM</div>
+                        <div class="city">Delhi</div>
+                    </div>
+                    <div class="airplane">✈────────✈</div>
+                    <div>
+                        <div class="time">04:00 PM</div>
+                        <div class="city">Istanbul</div>
+                    </div>
+                </div>
+                <div class="bottom-row">
+                    <div class="price">₹55,000</div>
+                    <a class="btn" href="/login?airline=TurkishAirlines&price=55000">Select Flight</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Thai Airways</h2>
+                <div class="flight-row">
+                    <div>
+                        <div class="time">07:40 AM</div>
+                        <div class="city">Delhi</div>
+                    </div>
+                    <div class="airplane">✈────────✈</div>
+                    <div>
+                        <div class="time">11:50 AM</div>
+                        <div class="city">Bangkok</div>
+                    </div>
+                </div>
+                <div class="bottom-row">
+                    <div class="price">₹35,000</div>
+                    <a class="btn" href="/login?airline=ThaiAirways&price=35000">Select Flight</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Etihad Airways</h2>
+                <div class="flight-row">
+                    <div>
+                        <div class="time">10:10 AM</div>
+                        <div class="city">Delhi</div>
+                    </div>
+                    <div class="airplane">✈────────✈</div>
+                    <div>
+                        <div class="time">01:20 PM</div>
+                        <div class="city">Abu Dhabi</div>
+                    </div>
+                </div>
+                <div class="bottom-row">
+                    <div class="price">₹40,000</div>
+                    <a class="btn" href="/login?airline=Etihad&price=40000">Select Flight</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>

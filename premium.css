@@ -1,0 +1,148 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #0b1220;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+.hero {
+
+    text-align: center;
+
+    padding: 120px 20px;
+
+    background:
+        linear-gradient(135deg,
+            #111827,
+            #1e293b);
+}
+
+.hero h1 {
+
+    font-size: 70px;
+
+    color: #fbbf24;
+
+    margin-bottom: 20px;
+}
+
+.hero p {
+
+    font-size: 22px;
+
+    color: #d1d5db;
+}
+
+.luxury-cards {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 30px;
+
+    padding: 80px;
+}
+
+.card {
+
+    background:
+        rgba(255, 255, 255, .05);
+
+    backdrop-filter: blur(15px);
+
+    border:
+        1px solid rgba(255, 255, 255, .1);
+
+    padding: 40px;
+
+    border-radius: 25px;
+
+    text-align: center;
+
+    transition: .4s;
+}
+
+.card:hover {
+
+    transform: translateY(-10px);
+
+    border-color: #fbbf24;
+}
+
+.icon {
+
+    font-size: 60px;
+
+    margin-bottom: 20px;
+}
+
+.card h2 {
+
+    color: #fbbf24;
+
+    margin-bottom: 15px;
+}
+
+.card p {
+
+    color: #d1d5db;
+
+    line-height: 1.8;
+}
+
+.experience {
+
+    text-align: center;
+
+    padding: 80px 30px;
+}
+
+.experience h2 {
+
+    font-size: 45px;
+
+    color: #fbbf24;
+
+    margin-bottom: 20px;
+}
+
+.experience p {
+
+    max-width: 800px;
+
+    margin: auto;
+
+    line-height: 2;
+
+    color: #d1d5db;
+}
+
+.back-btn {
+
+    display: block;
+
+    width: 220px;
+
+    margin: 40px auto 80px;
+
+    text-align: center;
+
+    background: #f59e0b;
+
+    color: white;
+
+    text-decoration: none;
+
+    padding: 16px;
+
+    border-radius: 12px;
+
+    font-weight: bold;
+}

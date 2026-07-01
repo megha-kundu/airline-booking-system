@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Switzerland</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #081018;
+            color: white;
+        }
+
+        .hero {
+
+            height: 70vh;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+
+            align-items: center;
+
+            text-align: center;
+
+            background:
+                linear-gradient(rgba(0, 0, 0, .55),
+                    rgba(0, 0, 0, .55)),
+                url("https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg");
+
+            background-size: cover;
+
+            background-position: center;
+        }
+
+        .hero h1 {
+
+            font-size: 80px;
+
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+
+            font-size: 24px;
+
+            color: #fbbf24;
+        }
+
+        .cards {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(280px, 1fr));
+
+            gap: 30px;
+
+            padding: 80px;
+        }
+
+        .card {
+
+            background: #111827;
+
+            padding: 30px;
+
+            border-radius: 20px;
+
+            transition: .4s;
+        }
+
+        .card:hover {
+
+            transform: translateY(-10px);
+        }
+
+        .card h2 {
+
+            color: #fbbf24;
+
+            margin-bottom: 15px;
+        }
+
+        .card p {
+
+            line-height: 1.8;
+
+            color: #d1d5db;
+        }
+
+        .book-btn {
+
+            display: block;
+
+            width: 300px;
+
+            margin: 50px auto;
+
+            text-align: center;
+
+            padding: 18px;
+
+            background: #f59e0b;
+
+            color: white;
+
+            text-decoration: none;
+
+            border-radius: 12px;
+
+            font-weight: bold;
+        }
+
+        .book-btn:hover {
+
+            background: #ffb300;
+        }
+
+        .back-btn {
+
+            display: block;
+
+            width: 280px;
+
+            margin: 60px auto 20px;
+
+            text-align: center;
+
+            padding: 18px;
+
+            background: transparent;
+
+            border: 2px solid #f59e0b;
+
+            color: #f59e0b;
+
+            text-decoration: none;
+
+            border-radius: 12px;
+
+            font-weight: bold;
+
+            transition: .3s;
+        }
+
+        .back-btn:hover {
+
+            background: #f59e0b;
+
+            color: white;
+
+            transform: translateY(-3px);
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="hero">
+
+        <h1>Switzerland 🇨🇭</h1>
+
+        <p>
+            Luxury Meets Nature
+        </p>
+
+    </div>
+
+    <div class="cards">
+
+        <div class="card">
+
+            <h2>🏔 Swiss Alps</h2>
+
+            <p>
+                Experience breathtaking snow-covered mountains and stunning scenery.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h2>🚂 Glacier Express</h2>
+
+            <p>
+                Travel through the Swiss Alps on one of the world's most scenic train journeys.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h2>🌊 Lake Geneva</h2>
+
+            <p>
+                Crystal-clear waters surrounded by beautiful landscapes and luxury resorts.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h2>❄ Jungfraujoch</h2>
+
+            <p>
+                Visit the famous Top of Europe with spectacular mountain views.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h2>🏨 Luxury Resorts</h2>
+
+            <p>
+                Enjoy world-class hospitality in premium mountain resorts.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h2>🌲 Alpine Villages</h2>
+
+            <p>
+                Discover charming villages surrounded by forests and valleys.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h2>🧀 Swiss Culture</h2>
+
+            <p>
+                Taste authentic Swiss chocolate, cheese and local traditions.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h2>📸 Scenic Photography</h2>
+
+            <p>
+                Capture some of the most beautiful natural landscapes in Europe.
+            </p>
+
+        </div>
+
+    </div>
+    <a href="/premium" class="back-btn">
+
+        ← Back To Destinations
+
+    </a>
+    <a href="/booking?airline=SwissAir&price=70000" class="book-btn">
+        Book Flight • ₹70,000
+    </a>
+
+</body>
+
+</html>

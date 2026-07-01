@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>New York</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #081018;
+            color: white;
+        }
+
+        .hero {
+
+            height: 70vh;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+
+            align-items: center;
+
+            text-align: center;
+
+            background:
+                linear-gradient(rgba(0, 0, 0, .45),
+                    rgba(0, 0, 0, .45)),
+                url("https://images.pexels.com/photos/466685/pexels-photo-466685.jpeg");
+
+            background-size: cover;
+
+            background-position: center;
+        }
+
+        .hero h1 {
+
+            font-size: 80px;
+
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+
+            font-size: 24px;
+
+            color: #fbbf24;
+        }
+
+        .cards {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(280px, 1fr));
+
+            gap: 30px;
+
+            padding: 80px;
+        }
+
+        .card {
+
+            background: #111827;
+
+            padding: 30px;
+
+            border-radius: 20px;
+
+            transition: .4s;
+        }
+
+        .card:hover {
+
+            transform: translateY(-10px);
+        }
+
+        .card h2 {
+
+            color: #fbbf24;
+
+            margin-bottom: 15px;
+        }
+
+        .card p {
+
+            line-height: 1.8;
+
+            color: #d1d5db;
+        }
+
+        .book-btn {
+
+            display: block;
+
+            width: 320px;
+
+            margin: 50px auto;
+
+            text-align: center;
+
+            padding: 18px;
+
+            background: #f59e0b;
+
+            color: white;
+
+            text-decoration: none;
+
+            border-radius: 12px;
+
+            font-weight: bold;
+        }
+
+        .book-btn:hover {
+
+            background: #ffb300;
+        }
+
+        .back-btn {
+
+            display: block;
+
+            width: 280px;
+
+            margin: 60px auto 20px;
+
+            text-align: center;
+
+            padding: 18px;
+
+            background: transparent;
+
+            border: 2px solid #f59e0b;
+
+            color: #f59e0b;
+
+            text-decoration: none;
+
+            border-radius: 12px;
+
+            font-weight: bold;
+
+            transition: .3s;
+        }
+
+        .back-btn:hover {
+
+            background: #f59e0b;
+
+            color: white;
+
+            transform: translateY(-3px);
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="hero">
+
+        <h1>New York 🇺🇸</h1>
+
+        <p>
+            The City That Never Sleeps
+        </p>
+
+    </div>
+
+    <div class="cards">
+
+        <div class="card">
+
+            <h2>🗽 Statue of Liberty</h2>
+
+            <p>
+                Visit America's most iconic symbol of freedom and hope.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h2>🌆 Times Square</h2>
+
+            <p>
+                Experience dazzling lights, entertainment and New York energy.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h2>🏙 Empire State Building</h2>
+
+            <p>
+                Enjoy breathtaking panoramic views of Manhattan.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h2>🌳 Central Park</h2>
+
+            <p>
+                Escape into nature in the heart of one of the world's busiest cities.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h2>🎭 Broadway</h2>
+
+            <p>
+                Watch world-famous theatre performances and musicals.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h2>🛍 Fifth Avenue</h2>
+
+            <p>
+                Explore luxury shopping and premium fashion brands.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h2>🌉 Brooklyn Bridge</h2>
+
+            <p>
+                Walk across one of New York's most famous landmarks.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h2>🍽 Fine Dining</h2>
+
+            <p>
+                Experience Michelin-star restaurants and diverse global cuisine.
+            </p>
+
+        </div>
+
+    </div>
+
+    <a href="/premium" class="back-btn">
+
+        ← Back To Destinations
+
+    </a>
+    <a href="/booking?airline=AirIndia&price=78000" class="book-btn">
+        Book Flight • ₹78,000
+    </a>
+
+</body>
+
+</html>

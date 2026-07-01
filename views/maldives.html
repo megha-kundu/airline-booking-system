@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Maldives</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #081018;
+            color: white;
+        }
+
+        .hero {
+
+            height: 70vh;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+
+            align-items: center;
+
+            text-align: center;
+
+            background:
+                linear-gradient(rgba(0, 0, 0, .45),
+                    rgba(0, 0, 0, .45)),
+                url("https://images.pexels.com/photos/3601425/pexels-photo-3601425.jpeg");
+
+            background-size: cover;
+
+            background-position: center;
+        }
+
+        .hero h1 {
+
+            font-size: 80px;
+
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+
+            font-size: 24px;
+
+            color: #fbbf24;
+        }
+
+        .cards {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(280px, 1fr));
+
+            gap: 30px;
+
+            padding: 80px;
+        }
+
+        .card {
+
+            background: #111827;
+
+            padding: 30px;
+
+            border-radius: 20px;
+
+            transition: .4s;
+        }
+
+        .card:hover {
+
+            transform: translateY(-10px);
+        }
+
+        .card h2 {
+
+            color: #fbbf24;
+
+            margin-bottom: 15px;
+        }
+
+        .card p {
+
+            line-height: 1.8;
+
+            color: #d1d5db;
+        }
+
+        .book-btn {
+
+            display: block;
+
+            width: 300px;
+
+            margin: 50px auto;
+
+            text-align: center;
+
+            padding: 18px;
+
+            background: #f59e0b;
+
+            color: white;
+
+            text-decoration: none;
+
+            border-radius: 12px;
+
+            font-weight: bold;
+        }
+
+        .book-btn:hover {
+
+            background: #ffb300;
+        }
+
+        .back-btn {
+
+            display: block;
+
+            width: 280px;
+
+            margin: 60px auto 20px;
+
+            text-align: center;
+
+            padding: 18px;
+
+            background: transparent;
+
+            border: 2px solid #f59e0b;
+
+            color: #f59e0b;
+
+            text-decoration: none;
+
+            border-radius: 12px;
+
+            font-weight: bold;
+
+            transition: .3s;
+        }
+
+        .back-btn:hover {
+
+            background: #f59e0b;
+
+            color: white;
+
+            transform: translateY(-3px);
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="hero">
+
+        <h1>Maldives 🇲🇻</h1>
+
+        <p>
+            Paradise Above The Ocean
+        </p>
+
+    </div>
+
+    <div class="cards">
+
+        <div class="card">
+
+            <h2>🏝 Private Islands</h2>
+
+            <p>
+                Experience ultimate privacy on exclusive island resorts.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h2>🏠 Water Villas</h2>
+
+            <p>
+                Stay in luxurious villas built directly above crystal-clear lagoons.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h2>🐠 Coral Reefs</h2>
+
+            <p>
+                Explore colorful marine life and underwater ecosystems.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h2>🤿 Scuba Diving</h2>
+
+            <p>
+                Discover world-famous diving spots with breathtaking views.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h2>🌅 Sunset Cruises</h2>
+
+            <p>
+                Enjoy unforgettable sunsets over the Indian Ocean.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h2>🍹 Beach Dining</h2>
+
+            <p>
+                Experience romantic dinners beside the sea.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h2>💆 Luxury Spa</h2>
+
+            <p>
+                Relax with world-class wellness and spa treatments.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h2>📸 Tropical Beauty</h2>
+
+            <p>
+                Capture breathtaking beaches and turquoise waters.
+            </p>
+
+        </div>
+
+    </div>
+    <a href="/premium" class="back-btn">
+
+        ← Back To Destinations
+
+    </a>
+    <a href="/booking?airline=MaldivianAir&price=30000" class="book-btn">
+        Book Flight • ₹30,000
+    </a>
+</body>
+
+</html>

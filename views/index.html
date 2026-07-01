@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard - SkyLine Airways</title>
+
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+    <div class="m">
+        <div class="overlay">
+
+            <div class="ff">SKYLINE AIRWAYS</div>
+
+
+            <!-- FULL BOOKING FORM (RESTORED) -->
+            <div class="fb">
+
+
+                <form method="POST" action="/book">
+
+                    <input type="hidden" id="airline" name="airline">
+
+                    <input type="hidden" name="price" id="ticketPrice">
+
+
+                    <!-- PASSENGER DETAILS -->
+                    <h3 class="section-title">Passenger Details</h3>
+
+                    <div class="m2">
+
+                        <div class="box">
+                            <label>Full Name</label>
+                            <input type="text" name="fullname" required>
+                        </div>
+
+                        <div class="box">
+                            <label>Email Address</label>
+                            <input type="email" name="email" required>
+                        </div>
+
+                        <div class="box">
+                            <label>Phone Number</label>
+                            <input type="tel" name="phone" required>
+                        </div>
+
+                        <div class="box">
+                            <label>Age</label>
+                            <input type="number" name="age">
+                        </div>
+
+                        <div class="box">
+                            <label>Passport / ID</label>
+                            <input type="text" name="passport">
+                        </div>
+
+                        <div class="box">
+                            <label>Nationality</label>
+                            <input type="text" name="nationality">
+                        </div>
+
+                        <div class="box">
+                            <label>Gender</label>
+                            <select name="gender">
+                                <option>Male</option>
+                                <option>Female</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                    <!-- TRAVEL DETAILS -->
+                    <h3 class="section-title">Travel Details</h3>
+
+                    <div class="m3">
+
+                        <div class="box">
+                            <label>From</label>
+                            <input type="text" name="from" required>
+                        </div>
+
+                        <div class="box">
+                            <label>To</label>
+                            <input type="text" name="to" required>
+                        </div>
+
+                        <div class="box">
+                            <label>Depart</label>
+                            <input type="date" name="depart" required>
+                        </div>
+
+                        <div class="box">
+                            <label>Return</label>
+                            <input type="date" name="return">
+                        </div>
+
+                        <div class="box">
+                            <label>Class</label>
+                            <select name="travelClass">
+                                <option>Economy</option>
+                                <option>Business</option>
+                                <option>First Class</option>
+                                <option>Premium Economy</option>
+                            </select>
+                        </div>
+
+                        <div class="box">
+                            <label>Seat Preference</label>
+                            <select name="seatPreference">
+                                <option>Window</option>
+                                <option>Aisle</option>
+                                <option>Middle</option>
+                            </select>
+                        </div>
+
+                        <div class="box">
+                            <label>Meal Preference</label>
+                            <select name="meal">
+                                <option>Vegetarian</option>
+                                <option>Non-Vegetarian</option>
+                                <option>Vegan</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                    <!-- FLIGHT OPTIONS -->
+                    <h3 class="section-title">Flight Preferences</h3>
+
+                    <div class="m4">
+
+                        <div class="check-box">
+                            <input type="checkbox" name="flexible">
+                            Flexible Dates
+                        </div>
+
+                        <div class="check-box">
+                            <input type="checkbox" name="direct">
+                            Direct Flights
+                        </div>
+
+                        <div class="check-box">
+                            <input type="checkbox" name="wheelchair">
+                            Wheelchair Assistance
+                        </div>
+
+                    </div>
+
+                    <!-- PASSENGER COUNT -->
+                    <h3 class="section-title">Passenger Count</h3>
+
+                    <div class="m5">
+
+                        <div class="box">
+                            <label>Adult</label>
+                            <input type="number" name="adult" value="1">
+                        </div>
+
+                        <div class="box">
+                            <label>Child</label>
+                            <input type="number" name="child" value="0">
+                        </div>
+
+                    </div>
+
+                    <!-- BUTTON -->
+                    <div class="sf">
+                        <button class="search-btn">Confirm Booking ✈️</button>
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+
+        document.getElementById("airline").value =
+            params.get("airline");
+
+        document.getElementById("ticketPrice").value =
+            params.get("price");
+    </script>
+</body>
+
+</html>

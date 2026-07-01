@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Japan</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #081018;
+            color: white;
+        }
+
+        .hero {
+
+            height: 70vh;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+
+            align-items: center;
+
+            text-align: center;
+
+            background:
+                linear-gradient(rgba(0, 0, 0, .45),
+                    rgba(0, 0, 0, .45)),
+                url("https://images.pexels.com/photos/2187605/pexels-photo-2187605.jpeg");
+
+            background-size: cover;
+
+            background-position: center;
+        }
+
+        .hero h1 {
+
+            font-size: 80px;
+
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+
+            font-size: 24px;
+
+            color: #fbbf24;
+        }
+
+        .cards {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(280px, 1fr));
+
+            gap: 30px;
+
+            padding: 80px;
+        }
+
+        .card {
+
+            background: #111827;
+
+            padding: 30px;
+
+            border-radius: 20px;
+
+            transition: .4s;
+        }
+
+        .card:hover {
+
+            transform: translateY(-10px);
+        }
+
+        .card h2 {
+
+            color: #fbbf24;
+
+            margin-bottom: 15px;
+        }
+
+        .card p {
+
+            line-height: 1.8;
+
+            color: #d1d5db;
+        }
+
+        .book-btn {
+
+            display: block;
+
+            width: 300px;
+
+            margin: 50px auto;
+
+            text-align: center;
+
+            padding: 18px;
+
+            background: #f59e0b;
+
+            color: white;
+
+            text-decoration: none;
+
+            border-radius: 12px;
+
+            font-weight: bold;
+        }
+
+        .book-btn:hover {
+
+            background: #ffb300;
+        }
+
+        .back-btn {
+
+            display: block;
+
+            width: 280px;
+
+            margin: 60px auto 20px;
+
+            text-align: center;
+
+            padding: 18px;
+
+            background: transparent;
+
+            border: 2px solid #f59e0b;
+
+            color: #f59e0b;
+
+            text-decoration: none;
+
+            border-radius: 12px;
+
+            font-weight: bold;
+
+            transition: .3s;
+        }
+
+        .back-btn:hover {
+
+            background: #f59e0b;
+
+            color: white;
+
+            transform: translateY(-3px);
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="hero">
+
+        <h1>Japan 🇯🇵</h1>
+
+        <p>
+            Where Ancient Tradition Meets Future Innovation
+        </p>
+
+    </div>
+
+    <div class="cards">
+
+        <div class="card">
+
+            <h2>🗻 Mount Fuji</h2>
+
+            <p>
+                Witness Japan's most iconic mountain and breathtaking natural beauty.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h2>🌸 Cherry Blossoms</h2>
+
+            <p>
+                Experience magical Sakura season in parks, temples and gardens.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h2>🏯 Kyoto Temples</h2>
+
+            <p>
+                Explore centuries-old temples, shrines and traditional Japanese culture.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h2>🌃 Tokyo Skyline</h2>
+
+            <p>
+                Discover one of the world's most futuristic and vibrant cities.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h2>🚄 Shinkansen</h2>
+
+            <p>
+                Travel on Japan's famous bullet trains with unmatched speed and comfort.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h2>🍣 Japanese Cuisine</h2>
+
+            <p>
+                Enjoy authentic sushi, ramen and world-renowned culinary experiences.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h2>♨ Hot Springs</h2>
+
+            <p>
+                Relax in luxurious natural onsen resorts surrounded by nature.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h2>🎌 Japanese Culture</h2>
+
+            <p>
+                Experience traditional festivals, tea ceremonies and timeless elegance.
+            </p>
+
+        </div>
+
+    </div>
+    <a href="/premium" class="back-btn">
+
+        ← Back To Destinations
+
+    </a>
+    <a href="/booking?airline=JapanAirlines&price=58000" class="book-btn">
+        Book Flight • ₹58,000
+    </a>
+</body>
+
+</html>

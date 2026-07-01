@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Login Successful</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #001f3f, #004aad);
+            font-family: Arial, sans-serif;
+        }
+
+        .success-card {
+            width: 500px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(20px);
+            padding: 50px;
+            border-radius: 25px;
+            color: white;
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .tick {
+            font-size: 80px;
+            color: #22c55e;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            margin-bottom: 15px;
+        }
+
+        .name {
+            color: #facc15;
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        p {
+            color: #ddd;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 35px;
+            background: #f59e0b;
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background: #d97706;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="success-card">
+
+        <div class="tick">✅</div>
+
+        <h1>Login Successful</h1>
+
+        <div class="name">
+            Welcome, {{fullname}}
+        </div>
+
+        <p>
+            You have successfully logged in to Skyline Airways.
+            Your next journey starts here.
+        </p>
+
+        <a href="/dashboard" class="btn">
+            Continue
+        </a>
+
+    </div>
+
+</body>
+
+</html>

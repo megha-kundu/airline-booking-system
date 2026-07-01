@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>
+        Bookings
+    </title>
+
+    <link rel="stylesheet" href="/admin.css">
+
+</head>
+
+<body>
+
+    <div class="sidebar">
+
+        <h2>
+            SKYLINE ✈
+        </h2>
+
+        <a href="/admin">
+            Dashboard
+        </a>
+
+        <a href="/admin-bookings">
+            Bookings
+        </a>
+
+        <a href="/dashboard">
+            Flights
+        </a>
+
+        <a href="/admin-users">
+            Users
+        </a>
+
+        <a href="/">
+            Logout
+        </a>
+
+    </div>
+
+    <div class="main">
+
+        <h1>
+            Flight Bookings
+        </h1>
+
+        <div class="table-box">
+
+            <table>
+
+                <tr>
+
+
+                    <th>
+                        Passenger
+                    </th>
+
+                    <th>
+                        From
+                    </th>
+
+                    <th>
+                        To
+                    </th>
+
+                    <th>
+                        Airline
+                    </th>
+
+                    <th>
+                        Price
+                    </th>
+
+                </tr>
+
+                {{rows}}
+
+            </table>
+
+        </div>
+
+    </div>
+
+</body>

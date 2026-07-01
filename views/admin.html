@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Admin Dashboard
+    </title>
+
+    <link rel="stylesheet" href="/admin.css">
+
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+
+    <div class="sidebar">
+
+        <h2>
+            SKYLINE ✈
+        </h2>
+
+        <div class="admin-profile">
+
+            <img src="/admin.png">
+
+            <h3>Admin</h3>
+
+        </div>
+
+        <a href="/admin">
+            Dashboard
+        </a>
+
+        <a href="/admin-bookings">
+            Bookings
+        </a>
+
+        <a href="/dashboard">
+            Flights
+        </a>
+
+        <a href="/admin-users">
+            Users
+        </a>
+
+        <a href="/">
+            Logout
+        </a>
+
+    </div>
+
+    <!-- MAIN -->
+
+    <div class="main">
+
+        <div class="welcome-box">
+
+            <h2>
+                Welcome Admin 👋
+            </h2>
+
+            <p>
+                Manage Flights, Users and Bookings from one dashboard.
+            </p>
+
+        </div>
+        <!-- TOPBAR -->
+
+        <div class="topbar">
+
+            <h1>
+                Booking Dashboard
+            </h1>
+            <div id="clock"></div>
+
+            <input type="text" id="searchInput" placeholder="Search booking..." onkeyup="filterTable()">
+
+        </div>
+
+        <!-- CARDS -->
+
+        <div class="cards">
+
+            <div class="card">
+
+                <h2>
+                    {{users}}
+                </h2>
+
+                <p>
+                    Total Users
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <h2>
+                    {{bookings}}
+                </h2>
+
+                <p>
+                    Total Bookings
+                </p>
+
+            </div>
+            <div class="card">
+
+                <h2>₹{{revenue}}</h2>
+
+                <p>Total Revenue</p>
+
+            </div>
+        </div>
+
+        <!-- TABLE -->
+
+        <div class="table-box">
+
+            <table id="bookingTable">
+
+                <tr>
+                    <th>SN</th>
+
+                    <th>
+                        Passenger
+                    </th>
+
+                    <th>
+                        From
+                    </th>
+
+                    <th>
+                        To
+                    </th>
+
+                    <th>
+                        Airline
+                    </th>
+
+                    <th>
+                        Price
+                    </th>
+
+                </tr>
+
+                {{rows}}
+
+            </table>
+
+        </div>
+
+        <!-- PAGINATION -->
+
+        <div class="pagination">
+
+            <button onclick="prevPage()">
+                << </button>
+
+                    <div id="pageNumbers"></div>
+
+                    <button onclick="nextPage()">
+                        >>
+                    </button>
+
+        </div>
+
+
+
+        <!-- SCRIPT -->
+
+        <script>
+
+            function filterTable() {
+
+                const input =
+                    document.getElementById(
+                        "searchInput"
+                    ).value.toLowerCase();
+
+                const rows =
+                    document.querySelectorAll(
+                        "#bookingTable tr"
+                    );
+
+                rows.forEach((row, index) => {
+
+                    if (index === 0) return;
+
+                    const text =
+                        row.innerText.toLowerCase();
+
+                    if (text.includes(input)) {
+
+                        row.style.display = "";
+
+                    }
+
+                    else {
+
+                        row.style.display = "none";
+                    }
+                });
+            }
+
+            const rowsPerPage = 5;
+
+            const tableRows =
+                document.querySelectorAll(
+                    "#bookingTable tr:not(:first-child)"
+                );
+
+            const totalPages =
+                Math.ceil(
+                    tableRows.length / rowsPerPage
+                );
+
+            let currentPage = 1;
+
+            function showPage(page) {
+
+                tableRows.forEach((row, index) => {
+
+                    row.style.display = "none";
+
+                    const start =
+                        (page - 1) * rowsPerPage;
+
+                    const end =
+                        start + rowsPerPage;
+
+                    if (
+                        index >= start &&
+                        index < end
+                    ) {
+
+                        row.style.display = "";
+                    }
+                });
+
+                document.getElementById(
+                    "pageNumbers"
+                ).innerHTML = "";
+
+                for (
+                    let i = 1;
+                    i <= totalPages;
+                    i++
+                ) {
+
+                    document.getElementById(
+                        "pageNumbers"
+                    ).innerHTML += `
+
+        <button
+        onclick="goToPage(${i})"
+        class="${currentPage === i
+                            ? 'active-page'
+                            : ''
+                        }">
+
+        ${i}
+
+        </button>
+
+        `;
+                }
+            }
+
+            function goToPage(page) {
+
+                currentPage = page;
+
+                showPage(currentPage);
+            }
+
+            function nextPage() {
+
+                if (currentPage < totalPages) {
+
+                    currentPage++;
+
+                    showPage(currentPage);
+                }
+            }
+
+            function prevPage() {
+
+                if (currentPage > 1) {
+
+                    currentPage--;
+
+                    showPage(currentPage);
+                }
+            }
+
+            showPage(currentPage);
+
+        </script>
+
+        <script>
+
+            setInterval(() => {
+
+                document.getElementById("clock")
+                    .innerHTML =
+                    new Date().toLocaleString();
+
+            }, 1000);
+
+        </script>
+</body>
+
+</html>

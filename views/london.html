@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>London</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #081018;
+            color: white;
+        }
+
+        .hero {
+
+            height: 70vh;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+
+            align-items: center;
+
+            text-align: center;
+
+            background:
+                linear-gradient(rgba(0, 0, 0, .55),
+                    rgba(0, 0, 0, .55)),
+                url("https://images.pexels.com/photos/460672/pexels-photo-460672.jpeg");
+
+            background-size: cover;
+
+            background-position: center;
+        }
+
+        .hero h1 {
+
+            font-size: 80px;
+
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+
+            font-size: 24px;
+
+            color: #fbbf24;
+        }
+
+        .cards {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(280px, 1fr));
+
+            gap: 30px;
+
+            padding: 80px;
+        }
+
+        .card {
+
+            background: #111827;
+
+            padding: 30px;
+
+            border-radius: 20px;
+
+            transition: .4s;
+        }
+
+        .card:hover {
+
+            transform: translateY(-10px);
+        }
+
+        .card h2 {
+
+            color: #fbbf24;
+
+            margin-bottom: 15px;
+        }
+
+        .card p {
+
+            line-height: 1.8;
+
+            color: #d1d5db;
+        }
+
+        .book-btn {
+
+            display: block;
+
+            width: 280px;
+
+            margin: 50px auto;
+
+            text-align: center;
+
+            padding: 18px;
+
+            background: #f59e0b;
+
+            color: white;
+
+            text-decoration: none;
+
+            border-radius: 12px;
+
+            font-weight: bold;
+        }
+
+        .book-btn:hover {
+
+            background: #ffb300;
+        }
+
+        .back-btn {
+
+            display: block;
+
+            width: 280px;
+
+            margin: 60px auto 20px;
+
+            text-align: center;
+
+            padding: 18px;
+
+            background: transparent;
+
+            border: 2px solid #f59e0b;
+
+            color: #f59e0b;
+
+            text-decoration: none;
+
+            border-radius: 12px;
+
+            font-weight: bold;
+
+            transition: .3s;
+        }
+
+        .back-btn:hover {
+
+            background: #f59e0b;
+
+            color: white;
+
+            transform: translateY(-3px);
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="hero">
+
+        <h1>London 🇬🇧</h1>
+
+        <p>
+            Royal Heritage, Luxury & Timeless Elegance
+        </p>
+
+    </div>
+
+    <div class="cards">
+
+        <div class="card">
+
+            <h2>🕰 Big Ben</h2>
+
+            <p>
+                One of the world's most famous landmarks and the symbol of London.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h2>🎡 London Eye</h2>
+
+            <p>
+                Enjoy breathtaking panoramic views of London's skyline.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h2>👑 Buckingham Palace</h2>
+
+            <p>
+                Witness the official residence of the British Royal Family.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h2>🌉 Tower Bridge</h2>
+
+            <p>
+                Explore London's iconic bridge and stunning river views.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h2>🏛 British Museum</h2>
+
+            <p>
+                Discover priceless treasures and world-famous historical collections.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h2>🛍 Oxford Street</h2>
+
+            <p>
+                Experience luxury shopping and premium fashion brands.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h2>🌳 Hyde Park</h2>
+
+            <p>
+                Relax in one of London's most beautiful green spaces.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h2>☕ London Lifestyle</h2>
+
+            <p>
+                Enjoy elegant cafés, fine dining and a sophisticated city atmosphere.
+            </p>
+
+        </div>
+
+    </div>
+    <a href="/premium" class="back-btn">
+
+        ← Back To Destinations
+
+    </a>
+    <a href="/booking?airline=British&price=55000" class="book-btn">
+        Book Flight • ₹55,000
+    </a>
+</body>
+
+</html>
