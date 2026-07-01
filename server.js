@@ -3,6 +3,7 @@ const fs = require("fs");
 const querystring = require("querystring");
 const { MongoClient } = require("mongodb");
 const nodemailer = require("nodemailer");
+require("dotenv").config();
 
 // =========================
 // NODEMAILER
@@ -13,18 +14,15 @@ const transporter = nodemailer.createTransport({
     service: "gmail",
 
     auth: {
-
-        user: "meghakundumeghakundu@gmail.com",
-
-        pass: "ajol mssa mpfj rurh"
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS
     }
 });
 
 // =========================
 // MONGODB
 // =========================
-
-const url = "mongodb://127.0.0.1:27017";
+const url = process.env.MONGO_URL;
 
 const client = new MongoClient(url);
 
