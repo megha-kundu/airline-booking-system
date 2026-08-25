@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap');
+
+:root {
+    --ink: #17231f;
+    --forest: #0b211c;
+    --lime: #d8e86b;
+    --paper: #f7f8f5;
+    --muted: #708078;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    align-items: center;
+    background: linear-gradient(135deg, #edf3df, #f7f8f5 55%, #dce9df) !important;
+    color: var(--ink) !important;
+    display: flex;
+    font-family: 'DM Sans', sans-serif !important;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 28px 16px;
+}
+
+.card {
+    background: #fff !important;
+    border: 1px solid #d7e0d5 !important;
+    border-radius: 8px !important;
+    box-shadow: 0 22px 60px rgba(23, 35, 31, .16) !important;
+    color: var(--ink) !important;
+    max-width: 560px !important;
+    padding: 32px !important;
+    width: 100% !important;
+}
+
+.logo-box {
+    justify-content: flex-start !important;
+}
+
+.logo {
+    border: 0 !important;
+    border-radius: 4px !important;
+    height: 48px !important;
+    object-fit: cover;
+    width: 48px !important;
+}
+
+.success-badge {
+    background: #e6f0bd !important;
+    border-radius: 3px !important;
+    color: #40520d !important;
+    font-size: 12px !important;
+    letter-spacing: .5px;
+    padding: 8px 12px !important;
+}
+
+h1 {
+    font: 800 30px 'Manrope', sans-serif !important;
+}
+
+.sub,
+.confirmation-line {
+    color: var(--muted) !important;
+    opacity: 1 !important;
+}
+
+.confirmation-line {
+    font-size: 13px;
+}
+
+.confirmation-line strong {
+    color: var(--ink);
+}
+
+.ticket {
+    background: var(--paper) !important;
+    border: 1px dashed #a9b8a7 !important;
+    border-radius: 4px !important;
+    padding: 20px !important;
+}
+
+.row {
+    border-bottom: 1px solid #e0e7df;
+    margin: 0 !important;
+    padding: 9px 0;
+}
+
+.row:last-child {
+    border: 0;
+}
+
+.label {
+    color: var(--muted);
+    opacity: 1 !important;
+}
+
+.value {
+    color: var(--ink) !important;
+}
+
+.qr img {
+    border: 1px solid #d7e0d5;
+    padding: 5px;
+}
+
+.actions {
+    display: flex;
+    gap: 10px;
+}
+
+.btn {
+    background: var(--ink) !important;
+    border-radius: 3px !important;
+    font-weight: 700;
+    margin: 0 !important;
+    padding: 13px !important;
+}
+
+.print {
+    background: var(--lime) !important;
+    color: var(--ink) !important;
+}
+
+@media print {
+    body {
+        background: white !important;
+        padding: 0;
+    }
+
+    .card {
+        box-shadow: none !important;
+        max-width: none !important;
+    }
+
+    .actions {
+        display: none;
+    }
+}
+
+@media(max-width:520px) {
+    .card {
+        padding: 22px !important;
+    }
+
+    .actions {
+        flex-direction: column;
+    }
+}
