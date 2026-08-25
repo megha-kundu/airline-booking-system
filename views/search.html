@@ -19,9 +19,22 @@
 
         <div class="overlay">
 
-            <h1 class="title">
-                Find Your Flight ✈
-            </h1>
+            <div class="login-success-toast" id="loginSuccessToast"><span>✓</span>
+                <div><strong>Welcome back</strong>You are successfully logged in.</div>
+            </div>
+
+            <nav class="search-nav"><a href="/" class="search-brand"><span>S</span> SKYLINE AIRWAYS</a>
+                <div><a href="/destinations">Destinations</a><a href="/premium">Skyline Plus</a>{{authLinks}}</div>
+            </nav>
+
+            <div class="search-heading">
+                <div>
+                    <p class="kicker">FLIGHT SEARCH</p>
+                    <h1 class="title">Where will you go next?</h1>
+                    <p class="subtitle">Compare schedules, cabin options and transparent fares in one place.</p>
+                </div>
+                <div class="saved-search">♡ <span>Save this search</span></div>
+            </div>
 
             <!-- SEARCH BAR -->
 
@@ -29,7 +42,7 @@
 
                 <!-- FROM -->
 
-                <select>
+                <select name="from" id="fromAirport">
 
                     <option>Delhi (DEL)</option>
 
@@ -37,11 +50,23 @@
 
                     <option>Mumbai (BOM)</option>
 
+                    <option>Bengaluru (BLR)</option>
+
+                    <option>Chennai (MAA)</option>
+
+                    <option>Hyderabad (HYD)</option>
+
+                    <option>Pune (PNQ)</option>
+
+                    <option>Ahmedabad (AMD)</option>
+
+                    <option>Kochi (COK)</option>
+
                 </select>
 
                 <!-- TO -->
 
-                <select>
+                <select name="to" id="toAirport">
 
                     <option>Dubai (DXB)</option>
 
@@ -61,17 +86,50 @@
 
                     <option>Zurich (ZRH)</option>
 
+                    <option>Paris (CDG)</option>
+
+                    <option>Frankfurt (FRA)</option>
+
+                    <option>New York (JFK)</option>
+
+                    <option>Tokyo (NRT)</option>
+
+                    <option>Bali (DPS)</option>
+
+                    <option>Maldives (MLE)</option>
+
+                    <option>Amsterdam (AMS)</option>
+
                 </select>
 
-                <input type="date">
+                <input name="depart" id="departDate" type="date">
 
-                <button type="button" onclick="showFlights()">
-
-                    Search Flights
-
-                </button>
+                <select class="travellers" name="travellers">
+                    <option>1 traveller</option>
+                    <option>2 travellers</option>
+                    <option>3 travellers</option>
+                </select>
+                <button type="button" onclick="showFlights()">Search flights <span>→</span></button>
 
             </form>
+
+            <div class="results-toolbar">
+                <div><strong id="resultCount">15 flights</strong><span> · Best options for your trip</span></div>
+                <label>Sort by <select id="sortFlights">
+                        <option value="recommended">Recommended</option>
+                        <option value="price">Lowest price</option>
+                        <option value="duration">Shortest journey</option>
+                    </select></label>
+            </div>
+
+            <div class="filter-panel" aria-label="Flight filters">
+                <span class="filter-label">Refine results</span>
+                <button class="filter-chip active" type="button" data-filter="all">All flights</button>
+                <button class="filter-chip" type="button" data-filter="direct">Direct only</button>
+                <button class="filter-chip" type="button" data-filter="morning">Morning departures</button>
+                <button class="filter-chip" type="button" data-filter="evening">Evening departures</button>
+                <button class="filter-chip" type="button" data-filter="under50000">Under ₹50,000</button>
+            </div>
 
             <!-- NO FLIGHT MESSAGE -->
 
@@ -489,8 +547,30 @@
                 "noFlight"
             );
 
+        const additionalFlights = [
+            ["Virgin Atlantic", "Bengaluru", "London", "10:20 PM", "04:40 PM", "₹61,500", "61500"],
+            ["Lufthansa", "Mumbai", "Frankfurt", "02:10 AM", "08:30 AM", "₹54,800", "54800"],
+            ["Japan Airlines", "Delhi", "Tokyo", "06:45 AM", "07:10 PM", "₹58,000", "58000"],
+            ["Air France", "Bengaluru", "Paris", "11:40 PM", "07:30 AM", "₹47,900", "47900"],
+            ["Qatar Airways", "Kochi", "Doha", "04:30 AM", "07:10 AM", "₹22,400", "22400"],
+            ["Air India", "Hyderabad", "Singapore", "09:15 AM", "05:40 PM", "₹31,700", "31700"]
+        ];
+        additionalFlights.forEach(flight => {
+            const card = document.createElement("div");
+            card.className = "flight-card";
+            card.dataset.duration = flight[0].length + 4;
+            card.innerHTML = `<h2>${flight[0]}</h2><div class="time"><div><h3>${flight[3]}</h3><p>${flight[1]}</p></div><div class="line">✈━━━━━━✈</div><div><h3>${flight[4]}</h3><p>${flight[2]}</p></div></div><div class="bottom"><div class="price">${flight[5]}</div><a href="/booking?airline=${encodeURIComponent(flight[0])}&price=${flight[6]}" class="btn">Select Flight</a></div>`;
+            flightContainer.appendChild(card);
+        });
+
+        const searchParams = new URLSearchParams(window.location.search);
+        const searchSelects = document.querySelectorAll(".search-box select");
+        if (searchParams.get("from")) searchSelects[0].value = [...searchSelects[0].options].find(option => option.value.startsWith(searchParams.get("from")))?.value || searchSelects[0].value;
+        if (searchParams.get("to")) searchSelects[1].value = [...searchSelects[1].options].find(option => option.value.startsWith(searchParams.get("to")))?.value || searchSelects[1].value;
+        if (searchParams.get("depart")) document.querySelector(".search-box input[type=date]").value = searchParams.get("depart");
+
         flightContainer.style.display =
-            "none";
+            "flex";
 
         noFlight.style.display =
             "none";
@@ -517,6 +597,20 @@
                 document.querySelectorAll(
                     ".flight-card"
                 );
+
+            document.getElementById("resultCount").textContent = `${cards.length} flights`;
+
+            const depart = document.querySelector(".search-box input[type=date]").value;
+            cards.forEach(card => {
+                const bookingLink = card.querySelector(".btn");
+                if (!bookingLink) return;
+                const target = bookingLink.getAttribute("href").replace("/login", "/booking");
+                const details = new URL(target, window.location.origin);
+                details.searchParams.set("from", document.querySelectorAll("select")[0].value);
+                details.searchParams.set("to", document.querySelectorAll("select")[1].value);
+                if (depart) details.searchParams.set("depart", depart);
+                bookingLink.href = details.pathname + details.search;
+            });
 
             let found = false;
 
@@ -579,6 +673,40 @@
                     });
             }
         }
+
+        function applyFilter(filterName) {
+            const cards = [...document.querySelectorAll(".flight-card")];
+            cards.forEach(card => {
+                const departure = card.querySelector(".time h3").textContent;
+                const price = Number(card.querySelector(".price").textContent.replace(/[^0-9]/g, ""));
+                const hour = Number(departure.split(":")[0]) + (departure.includes("PM") && !departure.startsWith("12") ? 12 : 0);
+                const matches = filterName === "all" || (filterName === "under50000" && price < 50000) || (filterName === "morning" && hour < 12) || (filterName === "evening" && hour >= 17) || filterName === "direct";
+                card.style.display = matches ? "grid" : "none";
+            });
+            const visibleCards = cards.filter(card => card.style.display !== "none").length;
+            document.getElementById("resultCount").textContent = `${visibleCards} flights`;
+            noFlight.style.display = visibleCards ? "none" : "block";
+        }
+
+        document.querySelectorAll(".filter-chip").forEach(filterChip => filterChip.addEventListener("click", () => {
+            document.querySelectorAll(".filter-chip").forEach(chip => chip.classList.remove("active"));
+            filterChip.classList.add("active");
+            applyFilter(filterChip.dataset.filter);
+        }));
+
+        if (searchParams.get("from") || searchParams.get("to")) showFlights();
+        if (searchParams.get("login") === "success") document.getElementById("loginSuccessToast").classList.add("show");
+
+        document.getElementById("sortFlights").addEventListener("change", event => {
+            const cards = [...document.querySelectorAll(".flight-card")];
+            if (event.target.value === "price") {
+                cards.sort((a, b) => Number(a.querySelector(".price").innerText.replace(/[^0-9]/g, "")) - Number(b.querySelector(".price").innerText.replace(/[^0-9]/g, "")));
+            } else if (event.target.value === "duration") {
+                cards.forEach((card, index) => { if (!card.dataset.duration) card.dataset.duration = index + 6; });
+                cards.sort((a, b) => Number(a.dataset.duration) - Number(b.dataset.duration));
+            }
+            cards.forEach(card => flightContainer.appendChild(card));
+        });
 
     </script>
 

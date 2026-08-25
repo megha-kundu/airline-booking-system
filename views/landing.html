@@ -2,199 +2,114 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>SkyLine Airways</title>
-
+    <meta name="description" content="Skyline Airways flight search and booking.">
+    <title>Skyline Airways | Fly better</title>
     <link rel="stylesheet" href="/landing.css">
-
 </head>
 
 <body>
-
-    <div class="hero">
-
-        <div class="overlay">
-
-            <!-- NAVBAR -->
-
+    <main class="hero">
+        <div class="hero-shade">
             <nav class="navbar">
-
-                <div class="logo">
-                    ✈ SKYLINE AIRWAYS
-                </div>
-
-                <div class="nav-links">
-
-                    <a href="/">Home</a>
-
-                    <a href="/login">Login</a>
-
-                    <a href="/signup">Signup</a>
-
-                    <a href="/admin-login" class="admin-btn">
-
-                        Admin Panel
-
-                    </a>
-                </div>
-
+                <a class="logo" href="/"><span class="logo-mark">S</span><span>SKYLINE <small>AIRWAYS</small></span></a>
+                <div class="nav-links"><a href="/destinations">Explore</a><a href="/premium">Skyline
+                        Plus</a>{{authLinks}}</div>
             </nav>
-
-            <!-- HERO CONTENT -->
-
-            <div class="hero-content">
-
-                <a href="/premium" class="tag">
-                    Premium Airline Experience
-                </a>
-                <h1>
-                    Fly Beyond <br>
-                    The Horizon
-                </h1>
-
-                <p>
-                    Luxury travel experience with seamless booking,
-                    premium seating and world-class comfort.
-                </p>
-
-                <div class="buttons">
-
-                    <a href="/flights" class="primary-btn">
-                        Select Flight
-                    </a>
-
-                    <a href="/login" class="secondary-btn">
-                        Login
-                    </a>
-
+            <section class="hero-content">
+                <p class="eyebrow"><span></span> THE SMARTER WAY TO TRAVEL</p>
+                <h1>Your next view<br>starts <em>here.</em></h1>
+                <p class="hero-copy">Compare routes, choose with confidence, and make every mile count.</p>
+                <div class="buttons"><a href="/search" class="primary-btn">Search flights <span>-&gt;</span></a><a
+                        href="/destinations" class="secondary-btn">Find inspiration <span>↗</span></a></div>
+            </section>
+            <form class="booking-widget" action="/search" method="get">
+                <div class="widget-top">
+                    <div class="trip-tabs"><button class="active" type="button">Round trip</button><button
+                            type="button">One way</button><button type="button">Multi-city</button></div><span>Flexible
+                        booking options</span>
                 </div>
-
-            </div>
-
+                <div class="quick-search"><label><span>From</span><select name="from" required>
+                            <option value="Delhi">Delhi (DEL)</option>
+                            <option value="Kolkata">Kolkata (CCU)</option>
+                            <option value="Mumbai">Mumbai (BOM)</option>
+                            <option value="Bengaluru">Bengaluru (BLR)</option>
+                            <option value="Chennai">Chennai (MAA)</option>
+                            <option value="Hyderabad">Hyderabad (HYD)</option>
+                            <option value="Kochi">Kochi (COK)</option>
+                        </select></label><button class="swap" type="button"
+                        aria-label="Swap airports">↔</button><label><span>To</span><select name="to" required>
+                            <option value="Dubai">Dubai (DXB)</option>
+                            <option value="Singapore">Singapore (SIN)</option>
+                            <option value="London">London (LHR)</option>
+                            <option value="Doha">Doha (DOH)</option>
+                            <option value="Bangkok">Bangkok (BKK)</option>
+                            <option value="Istanbul">Istanbul (IST)</option>
+                            <option value="Seoul">Seoul (ICN)</option>
+                            <option value="Zurich">Zurich (ZRH)</option>
+                            <option value="Paris">Paris (CDG)</option>
+                            <option value="Frankfurt">Frankfurt (FRA)</option>
+                            <option value="New York">New York (JFK)</option>
+                            <option value="Tokyo">Tokyo (NRT)</option>
+                            <option value="Amsterdam">Amsterdam (AMS)</option>
+                        </select></label><label><span>Departure</span><input name="depart" type="date"
+                            required></label><label><span>Return</span><input name="return"
+                            type="date"></label><label><span>Travellers</span><select name="travellers">
+                            <option value="1">1 Adult</option>
+                            <option value="2">2 Adults</option>
+                            <option value="3">3 Adults</option>
+                        </select></label><button class="widget-submit" type="submit">Search <span>-&gt;</span></button>
+                </div>
+            </form>
         </div>
-
-    </div>
-
-    <!-- FEATURES -->
-
+    </main>
+    <section class="trust-strip"><span>Trusted by 1M+ travellers</span><span>4.8 / 5 traveller rating</span><span>24/7
+            human support</span><span>Secure payments</span></section>
     <section class="features">
-
-
-        <div class="card" onclick=" location.href='/login'">
-
-            <div class="icon">✈</div>
-
-            <h2>Instant Booking</h2>
-
-            <p>
-                Book flights quickly with smart and secure system.
-            </p>
-
-        </div>
-
-        <div class="card" onclick="location.href='/premium'">
-
-            <div class="icon">💺</div>
-
-            <h2>Premium Comfort</h2>
-
-            <p>
-                Enjoy luxurious seating and premium cabin experience.
-            </p>
-
-        </div>
-
-        <div class="card" onclick="location.href='/destinations'">
-
-            <div class="icon">🌍</div>
-
-            <h2>Global Destinations</h2>
-
-            <p>
-                Travel worldwide with hundreds of destinations.
-            </p>
-
-        </div>
-
+        <article><b>01</b>
+            <h2>Search smarter</h2>
+            <p>Clear fares, flexible dates and the details that matter before you book.</p>
+        </article>
+        <article><b>02</b>
+            <h2>Travel comfortably</h2>
+            <p>Choose cabins, meals and seat preferences for a trip that feels like yours.</p>
+        </article>
+        <article><b>03</b>
+            <h2>Go further</h2>
+            <p>Discover long weekends, long-haul adventures and everywhere between.</p>
+        </article>
     </section>
-
     <section class="stats">
-
-        <div class="stat">
-            <h2>250+</h2>
-            <p>Destinations</p>
-        </div>
-
-        <div class="stat">
-            <h2>1M+</h2>
-            <p>Passengers</p>
-        </div>
-
-        <div class="stat">
-            <h2>99%</h2>
-            <p>Satisfaction</p>
-        </div>
-
+        <div><strong>250+</strong><span>Destinations</span></div>
+        <div><strong>1M+</strong><span>Passengers</span></div>
+        <div><strong>99%</strong><span>Satisfaction</span></div>
     </section>
-
     <section class="cta-section">
-
-        <h2>
-            Ready For Your Next Journey?
-        </h2>
-
-        <p>
-            Experience premium travel with Skyline Airways.
-        </p>
-
-        <a href="/signup" class="cta-btn">
-            Book Your Flight
-        </a>
-
+        <h2>Make room for somewhere new.</h2>
+        <p>Good journeys begin with a better booking experience.</p><a href="/signup">Book your flight</a>
     </section>
-    <footer class="footer">
-
-        <div class="footer-top">
-
-            <h2>✈ SKYLINE AIRWAYS</h2>
-
-            <p>
-                Connecting Dreams To Destinations Worldwide.
-            </p>
-
-        </div>
-
-        <div class="footer-links">
-
-            <a href="/">Home</a>
-
-            <a href="/login">Login</a>
-
-            <a href="/signup">Signup</a>
-
-            <a href="/premium">Premium</a>
-
-            <a href="/destinations">Destinations</a>
-
-        </div>
-
-        <div class="footer-bottom">
-
-            <p>
-                © 2026 Skyline Airways. All Rights Reserved.
-            </p>
-
-            <p>
-                Luxury • Comfort • Excellence
-            </p>
-
-        </div>
-
+    <footer class="footer"><strong>SKYLINE AIRWAYS</strong>
+        <p>Connecting dreams to destinations worldwide.</p>
+        <nav><a href="/">Home</a><a href="/destinations">Destinations</a><a href="/premium">Skyline Plus</a><a
+                href="/login">Sign in</a></nav><small>© 2026 Skyline Airways. All rights reserved.</small>
     </footer>
+    <script>
+        const airportForm = document.querySelector('.booking-widget');
+        const airportSelects = airportForm.querySelectorAll('select');
+        const returnField = airportForm.querySelector('input[name="return"]');
+        airportForm.querySelector('.swap').addEventListener('click', () => {
+            const currentFrom = airportSelects[0].value;
+            airportSelects[0].value = airportSelects[1].value;
+            airportSelects[1].value = currentFrom;
+        });
+        airportForm.querySelectorAll('.trip-tabs button').forEach(tab => tab.addEventListener('click', () => {
+            airportForm.querySelectorAll('.trip-tabs button').forEach(item => item.classList.remove('active'));
+            tab.classList.add('active');
+            returnField.disabled = tab.textContent.trim() === 'One way';
+            returnField.closest('label').style.opacity = returnField.disabled ? '.45' : '1';
+        }));
+    </script>
 </body>
 
 </html>

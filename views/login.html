@@ -7,6 +7,32 @@
     <link rel="stylesheet" href="/style.css">
 
     <style>
+        .login-toast {
+            align-items: center;
+            background: #fff;
+            border: 1px solid #f0c4c4;
+            border-left: 5px solid #d9534f;
+            border-radius: 8px;
+            box-shadow: 0 14px 35px rgba(0, 0, 0, .2);
+            color: #7a2421;
+
+            display: none;
+            gap: 12px;
+            margin: 0 auto 18px;
+            max-width: 400px;
+            padding: 14px 16px;
+            text-align: left;
+        }
+
+        .login-toast strong {
+            display: block;
+            color: #b52b27;
+        }
+
+        .login-toast.login-error {
+            display: flex;
+        }
+
         .auth-box {
             width: 400px;
             margin: 120px auto;
@@ -46,6 +72,27 @@
             display: block;
             margin-top: 10px;
         }
+
+        .password-wrap {
+            position: relative;
+        }
+
+        .password-wrap input {
+            padding-right: 48px;
+        }
+
+        .password-toggle {
+            background: transparent !important;
+            border: 0;
+            color: #f59e0b;
+            cursor: pointer;
+            font-size: 18px;
+            padding: 5px;
+            position: absolute;
+            right: 8px;
+            top: 13px;
+            width: auto !important;
+        }
     </style>
 </head>
 
@@ -53,13 +100,20 @@
 
     <div class="auth-box">
 
+        <div class="login-toast {{loginMessageClass}}"><span>!</span>
+            <div><strong>Login unsuccessful</strong>{{loginMessage}}</div>
+        </div>
+
         <h2>Login</h2>
 
         <form method="POST" action="/login">
+            <input type="hidden" name="next" value="{{next}}">
             <input type="text" name="fullname" placeholder="Full Name" required>
             <input type="email" name="email" placeholder="Email" required>
 
-            <input type="password" name="password" placeholder="Password" required>
+            <div class="password-wrap"><input id="loginPassword" type="password" name="password" placeholder="Password"
+                    required><button class="password-toggle" type="button" aria-label="Show password"
+                    onclick="togglePassword('loginPassword', this)">◉</button></div>
 
             <button type="submit">Login</button>
 
@@ -68,6 +122,15 @@
         <a href="/signup">Create new account</a>
 
     </div>
+
+    <script>
+        function togglePassword(inputId, button) {
+            const input = document.getElementById(inputId);
+            input.type = input.type === "password" ? "text" : "password";
+            button.textContent = input.type === "password" ? "◉" : "○";
+            button.setAttribute("aria-label", input.type === "password" ? "Show password" : "Hide password");
+        }
+    </script>
 
 </body>
 

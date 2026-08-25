@@ -6,12 +6,17 @@
     <title>Dashboard - SkyLine Airways</title>
 
     <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/booking.css">
 </head>
 
 <body>
 
     <div class="m">
         <div class="overlay">
+
+            <div class="login-success-toast" id="loginSuccessToast"><span>✓</span>
+                <div><strong>Welcome back</strong>You are successfully logged in. Your flight is ready to book.</div>
+            </div>
 
             <div class="ff">SKYLINE AIRWAYS</div>
 
@@ -22,9 +27,12 @@
 
                 <form method="POST" action="/book">
 
-                    <input type="hidden" id="airline" name="airline">
+                    <input type="hidden" id="airline" name="airline" value="{{airline}}">
 
-                    <input type="hidden" name="price" id="ticketPrice">
+                    <input type="hidden" name="price" id="ticketPrice" value="{{price}}">
+
+                    <div class="fare-summary"><span>Selected
+                            itinerary</span><strong>{{airline}}</strong><b>₹{{price}}</b></div>
 
 
                     <!-- PASSENGER DETAILS -->
@@ -34,12 +42,12 @@
 
                         <div class="box">
                             <label>Full Name</label>
-                            <input type="text" name="fullname" required>
+                            <input type="text" name="fullname" value="{{fullname}}" required>
                         </div>
 
                         <div class="box">
                             <label>Email Address</label>
-                            <input type="email" name="email" required>
+                            <input type="email" name="email" value="{{email}}" required>
                         </div>
 
                         <div class="box">
@@ -80,17 +88,17 @@
 
                         <div class="box">
                             <label>From</label>
-                            <input type="text" name="from" required>
+                            <input type="text" name="from" value="{{from}}" required>
                         </div>
 
                         <div class="box">
                             <label>To</label>
-                            <input type="text" name="to" required>
+                            <input type="text" name="to" value="{{to}}" required>
                         </div>
 
                         <div class="box">
                             <label>Depart</label>
-                            <input type="date" name="depart" required>
+                            <input type="date" name="depart" value="{{depart}}" required>
                         </div>
 
                         <div class="box">
@@ -182,11 +190,26 @@
     <script>
         const params = new URLSearchParams(window.location.search);
 
-        document.getElementById("airline").value =
-            params.get("airline");
+        if (params.get("airline")) document.getElementById("airline").value = params.get("airline");
+        if (params.get("price")) document.getElementById("ticketPrice").value = params.get("price");
 
-        document.getElementById("ticketPrice").value =
-            params.get("price");
+        if (params.get("from")) document.querySelector('[name="from"]').value = params.get("from");
+        if (params.get("to")) document.querySelector('[name="to"]').value = params.get("to");
+        if (params.get("depart")) document.querySelector('[name="depart"]').value = params.get("depart");
+        if (params.get("return")) document.querySelector('[name="return"]').value = params.get("return");
+        if (params.get("login") === "success") document.getElementById("loginSuccessToast").classList.add("show");
+
+        const adultCount = document.querySelector('[name="adult"]');
+        const childCount = document.querySelector('[name="child"]');
+        const fareSummaryPrice = document.querySelector(".fare-summary b");
+        const baseFare = Number(document.getElementById("ticketPrice").value || 0);
+        function updateFarePreview() {
+            const totalPassengers = Math.max(1, Number(adultCount.value || 0) + Number(childCount.value || 0));
+            fareSummaryPrice.textContent = `₹${(baseFare * totalPassengers).toLocaleString("en-IN")}`;
+        }
+        adultCount.addEventListener("input", updateFarePreview);
+        childCount.addEventListener("input", updateFarePreview);
+        updateFarePreview();
     </script>
 </body>
 
