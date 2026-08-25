@@ -495,7 +495,7 @@ Delete
                 if (
                     formData.username === "admin"
                     &&
-                    formData.password === "12345"
+                    formData.password === process.env.ADMIN_PASSWORD
                 ) {
                     setSession(res, { email: "admin", fullname: "Administrator", role: "admin" });
                     return redirect(res, "/admin");
