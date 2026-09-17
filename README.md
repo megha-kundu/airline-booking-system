@@ -37,3 +37,5 @@ A modern full-stack Airline Booking System that allows users to search flights, 
 ## 🌐 Live Demo
 
 🔗 https://airline-booking-system-0av6.onrender.com
+
+Note: The live site is hosted on a free tier. It may take up to 60 seconds to load initially while the server wakes up. Thank you for your patience!
